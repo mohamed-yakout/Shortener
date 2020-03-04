@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original url:</strong>
+  <%= @link_map.original_url %>
+</p>
+
+<p>
+  <strong>Short data:</strong>
+  <%= @link_map.short_data %>
+</p>
+
+<p>
+  <strong>Clicks:</strong>
+  <%= @link_map.clicks %>
+</p>
+
+<%= link_to 'Edit', edit_link_map_path(@link_map) %> |
+<%= link_to 'Back', link_maps_path %>

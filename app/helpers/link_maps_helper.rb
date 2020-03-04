@@ -1,0 +1,2 @@
+module LinkMapsHelper
+end

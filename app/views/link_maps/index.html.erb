@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Link Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original url</th>
+      <th>Short data</th>
+      <th>Clicks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @link_maps.each do |link_map| %>
+      <tr>
+        <td><%= link_map.original_url %></td>
+        <td><%= link_map.short_data %></td>
+        <td><%= link_map.clicks %></td>
+        <td><%= link_to 'Show', link_map %></td>
+        <td><%= link_to 'Edit', edit_link_map_path(link_map) %></td>
+        <td><%= link_to 'Destroy', link_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Link Map', new_link_map_path %>

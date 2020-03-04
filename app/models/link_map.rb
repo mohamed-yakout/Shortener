@@ -1,0 +1,2 @@
+class LinkMap < ApplicationRecord
+end
