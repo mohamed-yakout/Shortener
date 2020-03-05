@@ -9,14 +9,13 @@ class LinkMap < ApplicationRecord
   before_validation :set_short_data
 
   def set_short_data
-    # self.short_data = SecureRandom.uuid[0..5] if self.short_data.blank?
-    self.short_data = "5be1db" if self.short_data.blank?
+    self.short_data = SecureRandom.uuid[0..5] if self.short_data.blank?
     true
   end
 
   # get full shorten url
   def get_shorten_url
-
+    Rails.application.routes.url_helpers.short_url(short_data: self.short_data)
   end
 
   # recursive function to create shorten url
