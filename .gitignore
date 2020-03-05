@@ -24,3 +24,21 @@
 /config/master.key
 
 .idea/
+.ruby-gemset
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+yarn.lock
+npm-debug.log
+.browserslistrc
+bin/webpack
+bin/webpack-dev-server
+config/webpacker.yml
+postcss.config.js
+config/webpack/
+babel.config.js
