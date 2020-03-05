@@ -7,6 +7,7 @@
     <tr>
       <th>Original url</th>
       <th>Short data</th>
+      <th>Short url</th>
       <th>Clicks</th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= link_map.original_url %></td>
         <td><%= link_map.short_data %></td>
+        <td><%= link_map.get_shorten_url %></td>
         <td><%= link_map.clicks %></td>
         <td><%= link_to 'Show', link_map %></td>
         <td><%= link_to 'Edit', edit_link_map_path(link_map) %></td>
