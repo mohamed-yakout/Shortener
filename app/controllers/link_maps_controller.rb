@@ -12,6 +12,14 @@ class LinkMapsController < ApplicationController
   def show
   end
 
+  def redirect
+    @link_map = LinkMap.find_by_short_data(params[:short_data])
+    render 'errors/404', status: 404 if @link_map.nil?
+
+    @link_map.update_attribute(:clicks, @link_map.clicks + 1)
+    redirect_to @link_map.original_url
+  end
+
   # GET /link_maps/new
   def new
     @link_map = LinkMap.new
@@ -27,7 +35,7 @@ class LinkMapsController < ApplicationController
     @link_map = LinkMap.new(link_map_params)
 
     respond_to do |format|
-      if @link_map.save
+      if @link_map.save_record!
         format.html { redirect_to @link_map, notice: 'Link map was successfully created.' }
         format.json { render :show, status: :created, location: @link_map }
       else
