@@ -36,7 +36,20 @@ rake db:migrate
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions: 
+* Deployment instructions:
+
+Install Yarn:
+
+https://classic.yarnpkg.com/en/docs/install/#debian-stable
+
+Upgrade Yarn:
+
+```cassandraql
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+
+```
+
+Install Packages:
 
 ```cassandraql
 bundle install
