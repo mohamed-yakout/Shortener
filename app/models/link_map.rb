@@ -15,7 +15,9 @@ class LinkMap < ApplicationRecord
 
   # get full shorten url
   def get_shorten_url
-    Rails.application.routes.url_helpers.short_url(short_data: self.short_data)
+    if Rails.env.production? || Rails.env.development?
+      return Rails.application.routes.url_helpers.short_url(short_data: self.short_data)
+    end
   end
 
   # recursive function to create shorten url

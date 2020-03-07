@@ -59,4 +59,15 @@ rails webpacker:install
 rails s -p 3005
 ```
 
-* ...
+* Test Cases:
+
+```cassandraql
+
+RAILS_ENV=test rake db:environment:set db:drop db:create db:migrate db:test:prepare db:test:load
+
+rails test test/model/link_map_test.rb
+
+rails test test/controllers/link_maps_controller_test.rb
+
+rails test test/system/link_maps_test.rb
+```

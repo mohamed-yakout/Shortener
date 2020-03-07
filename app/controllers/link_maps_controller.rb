@@ -77,6 +77,6 @@ class LinkMapsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def link_map_params
-      params.require(:link_map).permit(:original_url, :short_data, :clicks)
+      params.require(:link_map).permit(:original_url)
     end
 end
