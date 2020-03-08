@@ -8,6 +8,8 @@ class LinkMapsTest < ApplicationSystemTestCase
     LinkMap.create(original_url: "https://www.linkedin.com/")
     @original_url = "https://www.youtube.com/"
     @new_original_url = "https://www.stackoverflow.com/"
+
+    Capybara.default_max_wait_time = 5
   end
 
   test "visiting the index" do
@@ -23,19 +25,23 @@ class LinkMapsTest < ApplicationSystemTestCase
     click_on "Create Link map"
 
     assert_text "Link map was successfully created"
+    click_on "Back"
   end
 
   test "updating a LinkMap" do
-    visit link_maps_url
+    # visit link_maps_url
+    visit link_map_url(@link_map_one)
     click_on "Edit", match: :first
 
 
     fill_in "Original url", with: @new_original_url
-    page.accept_confirm do
-      click_on "Update Link map"
-    end
+    click_on "Update Link map"
+    # page.accept_confirm do
+    #   click_on "Update Link map"
+    # end
 
     assert_text "Link map was successfully updated"
+    click_on "Back"
   end
 
   test "destroying a LinkMap" do
