@@ -13,12 +13,10 @@ rvm install ruby-2.6.3
 
 * System dependencies
 ````cassandraql
-Install PostgreSQL
+- Install PostgreSQL
 
-Insall Nodejs version above 9.0
+- Insall Nodejs version above 9.0
 ````
-
-* Configuration
 
 * Database creation
 
@@ -32,10 +30,6 @@ rake db:create
 rake db:migrate
 ```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions:
 
 Install Yarn:
@@ -46,7 +40,6 @@ Upgrade Yarn:
 
 ```cassandraql
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-
 ```
 
 Install Packages:
