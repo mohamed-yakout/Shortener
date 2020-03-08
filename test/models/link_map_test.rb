@@ -6,8 +6,14 @@ class LinkMapTest < ActiveSupport::TestCase
   end
 
   test "shorten url" do
-    a = link_maps(:one)
+    link_map = link_maps(:one)
 
-    assert a.short_data.present?
+    assert link_map.short_data.present?
+  end
+
+  test "create original url" do
+    link_map = LinkMap.create(original_url: "https://www.google.com/")
+
+    assert link_map.short_data.present?
   end
 end
